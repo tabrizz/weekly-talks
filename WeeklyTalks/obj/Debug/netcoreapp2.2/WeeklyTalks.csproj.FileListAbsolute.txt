@@ -1,0 +1,16 @@
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\bin\Debug\netcoreapp2.2\appsettings.Development.json
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\bin\Debug\netcoreapp2.2\appsettings.json
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\bin\Debug\netcoreapp2.2\WeeklyTalks.deps.json
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\bin\Debug\netcoreapp2.2\WeeklyTalks.runtimeconfig.json
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\bin\Debug\netcoreapp2.2\WeeklyTalks.runtimeconfig.dev.json
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\bin\Debug\netcoreapp2.2\WeeklyTalks.dll
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\obj\Debug\netcoreapp2.2\WeeklyTalks.RazorAssemblyInfo.cache
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\obj\Debug\netcoreapp2.2\WeeklyTalks.RazorAssemblyInfo.cs
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\obj\Debug\netcoreapp2.2\WeeklyTalks.AssemblyInfoInputs.cache
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\obj\Debug\netcoreapp2.2\WeeklyTalks.AssemblyInfo.cs
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\obj\Debug\netcoreapp2.2\WeeklyTalks.RazorTargetAssemblyInfo.cache
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\bin\Debug\netcoreapp2.2\WeeklyTalks.pdb
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\obj\Debug\netcoreapp2.2\WeeklyTalks.dll
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\obj\Debug\netcoreapp2.2\WeeklyTalks.pdb
+D:\Documents\Projects\NetCore\WeeklyTalks\WeeklyTalks\obj\Debug\netcoreapp2.2\WeeklyTalks.csprojAssemblyReference.cache
