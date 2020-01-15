@@ -10,10 +10,10 @@ namespace WeeklyTalks.Services
     public interface IUserService
     {
         Users Authenticate(string email, string password);
-        IEnumerable<Users> GetAll();
+        IEnumerable<Users> GetAll(int officeId);
         Users GetById(long id);
         Users Create(Users user, string password);
-        Users Update(Users user, long id);
+        Users Update(Users user);
         Users ChangePassword(Users user);
         void Delete(long id);
     }
@@ -45,9 +45,9 @@ namespace WeeklyTalks.Services
             return user;
         }
 
-        public IEnumerable<Users> GetAll()
+        public IEnumerable<Users> GetAll(int officeId)
         {
-            return _context.Users;
+            return _context.Users.Where(u => u.OfficeId == officeId).ToList();
         }
 
         public Users GetById(long id)
@@ -102,21 +102,27 @@ namespace WeeklyTalks.Services
             return user;
         }
 
-        public Users Update(Users userParam, long id)
+        public Users Update(Users userParam)
         {
-            if (userParam.Id == id)
-            {
-                var user = _context.Users.Find(userParam.Id);
-                user.UpdatedAt = DateTime.Now;
-                _context.Users.Update(user);
-                _context.SaveChanges();
-                
-                return user;
-            } else
-            {
-                throw new AppException("Id does not exist");
-            }
+            var user = _context.Users.Find(userParam.Id);
 
+            if (user == null)
+                throw new AppException("User not found");
+
+            if (!string.IsNullOrWhiteSpace(userParam.Password))
+            {
+                CreatePasswordHash(userParam.Password, out byte[] passwordHash, out byte[] passwordSalt);
+
+                user.PasswordHash = passwordHash;
+                user.PasswordSalt = passwordSalt;
+            }
+            user.OfficeId = userParam.OfficeId;
+            user.Password = "";
+            user.UpdatedAt = DateTime.Now;
+            _context.Users.Update(user);
+            _context.SaveChanges();
+                
+            return user;
         }    
 
         public void Delete(long id)

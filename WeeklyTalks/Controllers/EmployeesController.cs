@@ -61,9 +61,8 @@ namespace WeeklyTalks.Controllers
                 return BadRequest();
             }
             var employee = _mapper.Map<Employees>(createEmployeeDto);
-            employee.CreatedAt = DateTime.Now;
             employee.UpdatedAt = DateTime.Now;
-            _context.Entry(employee).State = EntityState.Modified;
+            _context.Employees.Update(employee);
 
             try
             {
@@ -89,11 +88,13 @@ namespace WeeklyTalks.Controllers
         public async Task<ActionResult<Employees>> PostEmployees([FromBody]CreateEmployeeDto createEmployeeDto)
         {
             var employee = _mapper.Map<Employees>(createEmployeeDto);
+            employee.Status = 1;
             employee.UpdatedAt = DateTime.Now;
+            employee.CreatedAt = DateTime.Now;
             _context.Employees.Add(employee);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetEmployees", new { id = employee.Id }, employee);
+            return Ok();
         }
 
         // DELETE: api/Employees/5

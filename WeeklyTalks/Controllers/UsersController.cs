@@ -18,7 +18,7 @@ using WeeklyTalks.Services;
 
 namespace WeeklyTalks.Controllers
 {
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]   
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]   
     [ApiController]
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
@@ -93,9 +93,9 @@ namespace WeeklyTalks.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public IActionResult GetAll([FromQuery]int officeId)
         {
-            var users = _userService.GetAll();
+            var users = _userService.GetAll(officeId);
             var userDtos = _mapper.Map<IList<UserDto>>(users);
             return Ok(userDtos);
         }
@@ -116,7 +116,7 @@ namespace WeeklyTalks.Controllers
             try
             {
                 // save 
-                _userService.Update(user, id);
+                _userService.Update(user);
                 return Ok();
             }
             catch (AppException ex)

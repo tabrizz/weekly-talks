@@ -151,6 +151,15 @@ namespace WeeklyTalks.Controllers
             return meeting;
         }
         
+        [HttpGet("{id}/attendance")]
+        public IActionResult GetEmployeeAttendance(int id)
+        {
+            var em = _context.EmployeeAttendanceQuery.FromSql("select e.id as Id, e.first_name as FirstName, e.last_name as LastName, em.attended as Attended, em.missing_reason as MissingReason from employee_meeting em inner join employees e on em.employee_id = e.id where em.meeting_id = {0}", id).ToList();
+
+            //var employees = _mapper.Map<EmployeeAttendanceQueryDto>(em);
+            return Ok(em);
+        }
+
         [HttpPost("{id}/attendance")]
         public IActionResult RegisterAttendance(long id, [FromBody]StoreAttendanceMeetingDto attendance)
         {

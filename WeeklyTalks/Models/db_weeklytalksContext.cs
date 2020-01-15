@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using WeeklyTalks.Dtos;
 
 namespace WeeklyTalks.Models
 {
@@ -14,7 +15,7 @@ namespace WeeklyTalks.Models
             : base(options)
         {
         }
-
+        public virtual DbSet<EmployeeAttendanceQueryDto> EmployeeAttendanceQuery {get; set;}
         public virtual DbSet<BusinessUnits> BusinessUnits { get; set; }
         public virtual DbSet<EmployeeMeeting> EmployeeMeeting { get; set; }
         public virtual DbSet<Employees> Employees { get; set; }
